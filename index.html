@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waleed Ahmed | High-Contrast Creative Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom Tailwind Configuration & High-Contrast Light Theme */
+        :root {
+            /* Professional Royal Green Accent */
+            --color-accent: 21 128 61; /* Green-700 RGB */
+            --color-text-primary: #1F2937; /* Dark Gray */
+            --color-bg-light: #F9FAFB; /* Off-White Background */
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background-color: var(--color-bg-light);
+            color: var(--color-text-primary);
+        }
+
+        /* Utility classes for the Royal Green Accent */
+        .accent-text { color: rgb(var(--color-accent)); }
+        .accent-bg { background-color: rgb(var(--color-accent)); }
+        .accent-border { border-color: rgb(var(--color-accent)); }
+        .hover-accent-text:hover { color: rgb(var(--color-accent)); }
+        
+        .btn-primary {
+            background-color: rgb(var(--color-accent));
+            color: white;
+            box-shadow: 0 4px 10px rgba(var(--color-accent), 0.3);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 15px rgba(var(--color-accent), 0.4);
+        }
+
+        /* Initial state for smooth scroll animation */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth Cubic Ease */
+        }
+
+        /* Final state for scroll animation */
+        .animate-on-scroll.in-viewport {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Project Card Styling for clean, high-contrast look */
+        .project-card-wrapper {
+            background-color: white;
+            border: 1px solid #E5E7EB; /* Light border */
+            transition: all 0.3s ease;
+        }
+        .project-card-wrapper:hover {
+            border-color: rgb(var(--color-accent));
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Video Container */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Custom Styles for Tabs/Categories */
+        .slide-hidden {
+            display: none;
+        }
+        .slide-active {
+            display: grid; /* For the categories that are visible */
+        }
+
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-md">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="#home" class="text-2xl font-extrabold tracking-tight accent-text">Waleed Ahmed</a>
+                <div class="hidden md:flex space-x-8 text-sm font-semibold">
+                    <a href="#about" class="text-gray-600 hover-accent-text transition duration-300">About</a>
+                    <a href="#experience" class="text-gray-600 hover-accent-text transition duration-300">Experience</a>
+                    <a href="#skills" class="text-gray-600 hover-accent-text transition duration-300">Expertise</a>
+                    <a href="#projects" class="text-gray-600 hover-accent-text transition duration-300">Projects</a>
+                    <a href="#contact" class="text-gray-600 hover-accent-text transition duration-300">Connect</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-button" class="p-2 rounded-md text-gray-800 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-700">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden pb-4 space-y-2 text-center text-lg bg-white/95">
+                <a href="#about" class="block py-2 text-gray-700 hover-accent-text transition duration-300">About</a>
+                <a href="#experience" class="block py-2 text-gray-700 hover-accent-text transition duration-300">Experience</a>
+                <a href="#skills" class="block py-2 text-gray-700 hover-accent-text transition duration-300">Expertise</a>
+                <a href="#projects" class="block py-2 text-gray-700 hover-accent-text transition duration-300">Projects</a>
+                <a href="#contact" class="block py-2 text-gray-700 hover-accent-text transition duration-300">Connect</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto">
+        <section id="home" class="py-32 sm:py-40 lg:py-52 px-4">
+            <div class="grid lg:grid-cols-5 gap-12 items-center max-w-6xl mx-auto">
+                
+                <div class="lg:col-span-3 text-center lg:text-left animate-on-scroll">
+                    <p class="text-lg sm:text-xl mb-4 font-semibold uppercase tracking-widest text-green-700">Waleed Ahmed | Visual Solutions Creator</p>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-8 text-gray-900">
+                        Crafting Next-Gen Visuals Through <span class="accent-text">AI + Creativity</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 max-w-full lg:max-w-xl mb-10">
+                        I am an AI video and image creator with a strong foundation in cinematic video editing. I transform ideas into high-quality visuals—hyper-realistic AI scenes, polished edits, and compelling designs that elevate brands and storytellers.
+                    </p>
+                    <a href="#projects" class="btn-primary inline-flex items-center justify-center px-8 py-3 text-lg font-bold rounded-xl shadow-lg">
+                        <i data-lucide="monitor-play" class="w-5 h-5 mr-3"></i> View Featured Works
+                    </a>
+                </div>
+
+                <div class="lg:col-span-2 flex justify-center lg:justify-end mt-12 lg:mt-0 animate-on-scroll">
+                    <div class="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+                        <div class="absolute inset-0 rounded-full accent-bg opacity-10"></div>
+                        <div class="absolute inset-4 sm:inset-6 bg-white rounded-full shadow-2xl border-4 accent-border overflow-hidden flex items-center justify-center">
+                            <img src="headshot.jpg" alt="Waleed Ahmed Professional Portrait" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="about" class="py-24 px-4 border-t border-gray-200">
+             <span class="text-sm font-semibold uppercase tracking-widest accent-text block mb-8">01. About Me</span>
+            <div class="grid md:grid-cols-2 gap-16 items-start max-w-6xl mx-auto">
+                <div class="animate-on-scroll">
+                    <h2 class="text-4xl font-bold mt-2 mb-6 text-gray-900">Bridging Traditional Artistry with Future Tech</h2>
+                    <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                        I am a creative and detail-oriented AI Video Editor with strong expertise in AI tools like Google VEO-3, Flow, and Midjourney, specializing in transforming still references into cinematic, brand-driven video content.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Skilled in AI-based storytelling, visual design, and post-production for digital platforms including Instagram, TikTok, YouTube, and LinkedIn. Passionate about combining technology with creativity to deliver premium, platform-optimized visuals that engage and inspire.
+                    </p>
+                </div>
+                <div class="animate-on-scroll space-y-8">
+                    <div class="p-6 bg-white rounded-xl shadow-xl border-l-4 accent-border hover:shadow-2xl transition duration-300">
+                        <h3 class="text-4xl font-extrabold accent-text mb-1">5+</h3>
+                        <p class="text-gray-700 font-semibold">Years Professional Experience</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-xl shadow-xl border-l-4 accent-border hover:shadow-2xl transition duration-300">
+                        <h3 class="text-4xl font-extrabold accent-text mb-1">Top-Rated</h3>
+                        <p class="text-gray-700 font-semibold">Upwork Designer & Editor</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-24 px-4 border-t border-gray-200">
+            <span class="text-sm font-semibold uppercase tracking-widest accent-text">02. Credentials</span>
+            <h2 class="text-4xl font-bold mb-16 mt-2 text-gray-900 text-center">Background & Formal Validation</h2>
+
+            <div class="grid lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+                <div class="lg:col-span-2 space-y-8">
+                    <h3 class="text-2xl font-bold accent-text mb-6">Professional History</h3>
+                    
+                    <div class="animate-on-scroll p-6 rounded-xl shadow-lg bg-white border border-gray-200 hover:shadow-xl transition duration-300">
+                        <div class="flex justify-between items-start">
+                            <h4 class="text-xl font-semibold text-gray-900">Lead AI Media Producer</h4>
+                            <p class="text-sm font-medium text-gray-500">2023 – Present</p>
+                        </div>
+                        <p class="text-gray-700 mb-3">Creative Studio, Remote</p>
+                        <p class="text-sm text-gray-600">Focused on delivering high-quality visual output through AI innovation, creative design, and professional video production.</p>
+                    </div>
+                    
+                    <div class="animate-on-scroll p-6 rounded-xl shadow-lg bg-white border border-gray-200 hover:shadow-xl transition duration-300">
+                        <div class="flex justify-between items-start">
+                            <h4 class="text-xl font-semibold text-gray-900">AI Video Expert</h4>
+                            <p class="text-sm font-medium text-gray-500">2022 – Present</p>
+                        </div>
+                        <p class="text-gray-700 mb-3">Upwork & Direct Clientele</p>
+                        <p class="text-sm text-gray-600">Produced Ad creatives, reels, and cinematic brand videos optimized for social engagement.</p>
+                    </div>
+                    
+                    <div class="animate-on-scroll p-6 rounded-xl shadow-lg bg-white border border-gray-200 hover:shadow-xl transition duration-300">
+                        <div class="flex justify-between items-start">
+                            <h4 class="text-xl font-semibold text-gray-900">Freelance Video Editor & Graphic Designer</h4>
+                            <p class="text-sm font-medium text-gray-500">2018 – Present</p>
+                        </div>
+                        <p class="text-gray-700 mb-3">Upwork & Direct Clientele</p>
+                        <p class="text-sm text-gray-600">I edit the footage using tools like Adobe Premiere Pro, adding transitions, captions, background music, and platform specific formatting to ensure polished, professional output.</p>
+                    </div>
+                </div>
+
+                <div class="space-y-10">
+                    <div class="animate-on-scroll">
+                        <h3 class="text-2xl font-bold accent-text mb-6">Education</h3>
+                        <div class="p-6 rounded-xl shadow-lg bg-white border border-gray-200 hover:shadow-xl transition duration-300">
+                            <h4 class="text-xl font-semibold text-gray-900">B.Eng. in Computer Engineering</h4>
+                            <p class="text-gray-600">CUST, 2027</p>
+                        </div>
+                    </div>
+
+                    <div class="animate-on-scroll">
+                        <h3 class="text-2xl font-bold accent-text mb-6 mt-10">Key Certifications</h3>
+                        <ul class="space-y-3">
+                            
+                            <a href="https://drive.google.com/file/d/124dUNZymc1laY5yAKJHXIf0c_R8yxQpJ/view" target="_blank" class="block group relative overflow-hidden rounded-lg">
+                                <li class="relative flex items-center text-gray-700 p-3 bg-gray-50 border border-gray-200 transition-all duration-300 hover:shadow-md hover:bg-white hover:border-green-600 transform hover:scale-[1.02]">
+                                    
+                                    <span class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-sm font-extrabold text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
+                                                CLICK TO VIEW <i data-lucide="arrow-left" class="w-4 h-4 inline-block ml-1"></i>
+                                    </span>
+
+                                    <div class="flex items-center w-full relative z-10 p-0">
+                                        <i data-lucide="check-circle" class="w-5 h-5 mr-3 accent-text transition-colors group-hover:text-green-700"></i> 
+                                        <span class="relative transition-opacity duration-100 group-hover:opacity-10">CONTENT WRITING</span>
+                                    </div>
+
+                                    <div class="absolute inset-0 bg-green-600 bg-opacity-10 transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out z-20"></div>
+                                </li>
+                            </a>
+
+                            <a href="https://drive.google.com/file/d/1H02HvdzYp4DULlwP-43uL6121Hdt8W-T/view" target="_blank" class="block group relative overflow-hidden rounded-lg">
+                                <li class="relative flex items-center text-gray-700 p-3 bg-gray-50 border border-gray-200 transition-all duration-300 hover:shadow-md hover:bg-white hover:border-green-600 transform hover:scale-[1.02]">
+                                    
+                                    <span class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-sm font-extrabold text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
+                                                CLICK TO VIEW <i data-lucide="arrow-left" class="w-4 h-4 inline-block ml-1"></i>
+                                    </span>
+
+                                    <div class="flex items-center w-full relative z-10 p-0">
+                                        <i data-lucide="check-circle" class="w-5 h-5 mr-3 accent-text transition-colors group-hover:text-green-700"></i> 
+                                        <span class="relative transition-opacity duration-100 group-hover:opacity-10">FREELANCING</span>
+                                    </div>
+
+                                    <div class="absolute inset-0 bg-green-600 bg-opacity-10 transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out z-20"></div>
+                                </li>
+                            </a>
+
+                            <a href="https://drive.google.com/file/d/1g8f6rfvgckhsfz3A0U4sHxCkBBQctjSH/view" target="_blank" class="block group relative overflow-hidden rounded-lg">
+                                <li class="relative flex items-center text-gray-700 p-3 bg-gray-50 border border-gray-200 transition-all duration-300 hover:shadow-md hover:bg-white hover:border-green-600 transform hover:scale-[1.02]">
+                                    
+                                    <span class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-sm font-extrabold text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
+                                              CLICK TO VIEW <i data-lucide="arrow-left" class="w-4 h-4 inline-block ml-1"></i>
+                                    </span>
+
+                                    <div class="flex items-center w-full relative z-10 p-0">
+                                        <i data-lucide="check-circle" class="w-5 h-5 mr-3 accent-text transition-colors group-hover:text-green-700"></i> 
+                                        <span class="relative transition-opacity duration-100 group-hover:opacity-10">DIGITAL MARKETING</span>
+                                    </div>
+
+                                    <div class="absolute inset-0 bg-green-600 bg-opacity-10 transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out z-20"></div>
+                                </li>
+                            </a>
+
+                            <a href="https://drive.google.com/file/d/1g8f6rfvgckhsfz3A0U4sHxCkBBQctjSH/view" target="_blank" class="block group relative overflow-hidden rounded-lg">
+                                <li class="relative flex items-center text-gray-700 p-3 bg-gray-50 border border-gray-200 transition-all duration-300 hover:shadow-md hover:bg-white hover:border-green-600 transform hover:scale-[1.02]">
+                                    
+                                    <span class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-sm font-extrabold text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
+                                                CLICK TO VIEW <i data-lucide="arrow-left" class="w-4 h-4 inline-block ml-1"></i>
+                                    </span>
+
+                                    <div class="flex items-center w-full relative z-10 p-0">
+                                        <i data-lucide="check-circle" class="w-5 h-5 mr-3 accent-text transition-colors group-hover:text-green-700"></i> 
+                                        <span class="relative transition-opacity duration-100 group-hover:opacity-10">GOOGLE ADS</span>
+                                    </div>
+
+                                    <div class="absolute inset-0 bg-green-600 bg-opacity-10 transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out z-20"></div>
+                                </li>
+                            </a>
+
+                            <a href="https://drive.google.com/file/d/1k_bTqSSnQGvZucDfpDKE3XmJKX8YVqrR/view" target="_blank" class="block group relative overflow-hidden rounded-lg">
+                                <li class="relative flex items-center text-gray-700 p-3 bg-gray-50 border border-gray-200 transition-all duration-300 hover:shadow-md hover:bg-white hover:border-green-600 transform hover:scale-[1.02]">
+                                    
+                                    <span class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-sm font-extrabold text-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
+                                                CLICK TO VIEW <i data-lucide="arrow-left" class="w-4 h-4 inline-block ml-1"></i>
+                                    </span>
+
+                                    <div class="flex items-center w-full relative z-10 p-0">
+                                        <i data-lucide="check-circle" class="w-5 h-5 mr-3 accent-text transition-colors group-hover:text-green-700"></i> 
+                                        <span class="relative transition-opacity duration-100 group-hover:opacity-10">FACEBOOK ADS</span>
+                                    </div>
+
+                                    <div class="absolute inset-0 bg-green-600 bg-opacity-10 transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out z-20"></div>
+                                </li>
+                            </a>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-24 px-4 border-t border-gray-200">
+            <span class="text-sm font-semibold uppercase tracking-widest accent-text">03. Proficiency</span>
+            <h2 class="text-4xl font-bold mb-16 mt-2 text-gray-900 text-center">Skills & Expert Toolkit</h2>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
+                
+                <div class="animate-on-scroll flex flex-col items-center p-8 rounded-xl shadow-lg bg-white border border-gray-200 hover:shadow-xl transition duration-300">
+                    <i data-lucide="scissors" class="w-8 h-8 accent-text mb-3"></i>
+                    <p class="text-lg font-medium text-center text-gray-900">Runway</p>
+                    <p class="text-xs text-gray-500">Gen AI Editing</p>
+                </div>
+
+                <div class="animate-on-scroll flex flex-col items-center p-8 rounded-xl shadow-lg bg-white border border-gray-200 hover:shadow-xl transition duration-300">
+                    <i data-lucide="messages-square" class="w-8 h-8 accent-text mb-3"></i>
+                    <p class="text-lg font-medium text-center text-gray-900">ChatGPT</p>
+                    <p class="text-xs text-gray-500">Prompt Engineering</p>
+                </div>
+                
+                <div class="animate-on-scroll flex flex-col items-center p-8 rounded-xl shadow-lg bg-white border border-gray-200 hover:shadow-xl transition duration-300">
+                    <i data-lucide="clapperboard" class="w-8 h-8 accent-text mb-3"></i>
+                    <p class="text-lg font-medium text-center text-gray-900">Premiere Pro</p>
+                    <p class="text-xs text-gray-500">Timeline Editing</p>
+                </div>
+                
+                <div class="animate-on-scroll flex flex-col items-center p-8 rounded-xl shadow-lg bg-white border border-gray-200 hover:shadow-xl transition duration-300">
+                    <i data-lucide="film" class="w-8 h-8 accent-text mb-3"></i>
+                    <p class="text-lg font-medium text-center text-gray-900">Midjourney</p>
+                    <p class="text-xs text-gray-500">Image Generation</p>
+                </div>
+                
+                <div class="animate-on-scroll flex flex-col items-center p-8 rounded-xl shadow-lg bg-white border border-gray-200 hover:shadow-xl transition duration-300">
+                    <i data-lucide="sparkles" class="w-8 h-8 accent-text mb-3"></i>
+                    <p class="text-lg font-medium text-center text-gray-900">Veo 3</p>
+                    <p class="text-xs text-gray-500">AI Video Production</p>
+                </div>
+
+                <div class="animate-on-scroll flex flex-col items-center p-8 rounded-xl shadow-lg bg-white border border-gray-200 hover:shadow-xl transition duration-300">
+                    <i data-lucide="video" class="w-8 h-8 accent-text mb-3"></i>
+                    <p class="text-lg font-medium text-center text-gray-900">SORA</p>
+                    <p class="text-xs text-gray-500">Advanced AI Video</p>
+                </div>
+                
+                <div class="animate-on-scroll flex flex-col items-center p-8 rounded-xl shadow-lg bg-white border border-gray-200 hover:shadow-xl transition duration-300">
+                    <i data-lucide="zap" class="w-8 h-8 accent-text mb-3"></i>
+                    <p class="text-lg font-medium text-center text-gray-900">Nano Banana</p>
+                    <p class="text-xs text-gray-500">Creative Rendering</p>
+                </div>
+
+                <div class="animate-on-scroll flex flex-col items-center p-8 rounded-xl shadow-lg bg-white border border-gray-200 hover:shadow-xl transition duration-300">
+                    <i data-lucide="image" class="w-8 h-8 accent-text mb-3"></i>
+                    <p class="text-lg font-medium text-center text-gray-900">Photoshop</p>
+                    <p class="text-xs text-gray-500">Image Manipulation</p>
+                </div>
+                
+                <div class="animate-on-scroll flex flex-col items-center p-8 rounded-xl shadow-lg bg-white border border-gray-200 hover:shadow-xl transition duration-300">
+                    <i data-lucide="pen-tool" class="w-8 h-8 accent-text mb-3"></i>
+                    <p class="text-lg font-medium text-center text-gray-900">Illustrator</p>
+                    <p class="text-xs text-gray-500">Vector & Branding</p>
+                </div>
+                
+                <div class="animate-on-scroll flex flex-col items-center p-8 rounded-xl shadow-lg bg-white border border-gray-200 hover:shadow-xl transition duration-300">
+                    <i data-lucide="layout-grid" class="w-8 h-8 accent-text mb-3"></i>
+                    <p class="text-lg font-medium text-center text-gray-900">Canva</p>
+                    <p class="text-xs text-gray-500">Rapid Design</p>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="projects" class="py-24 px-4 border-t border-gray-200">
+            <span class="text-sm font-semibold uppercase tracking-widest accent-text">04. Works</span>
+            <h2 class="text-4xl font-bold mb-8 mt-2 text-gray-900 text-center">Project Gallery & Creative Outcomes</h2>
+
+            <div class="flex flex-wrap justify-center space-x-2 sm:space-x-4 mb-12 max-w-4xl mx-auto border-b border-gray-200">
+                <button onclick="showCategory('animated-logos')" class="project-tab tab-active text-lg px-4 py-2 font-semibold text-white bg-green-700 rounded-t-lg transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-700">Animated Logos (3)</button>
+                <button onclick="showCategory('ai-pictures')" class="project-tab text-lg px-4 py-2 font-semibold text-gray-700 hover:text-green-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-700">AI Pictures (6)</button>
+                <button onclick="showCategory('ai-animated-videos')" class="project-tab text-lg px-4 py-2 font-semibold text-gray-700 hover:text-green-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-700">AI Animated Videos (3)</button>
+                <button onclick="showCategory('ai-videos-general')" class="project-tab text-lg px-4 py-2 font-semibold text-gray-700 hover:text-green-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-700">AI Videos (9)</button>
+            </div>
+            
+            <div id="project-galleries" class="max-w-7xl mx-auto">
+
+                <div id="animated-logos" class="project-category animate-on-scroll block">
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="project-card cursor-pointer group" data-project='{"title": "Evolve Fitness Logo Animation", "type": "Motion Graphics / Branding", "video_url": "https://youtu.be/aMyCWG6iV0M", "description": "Dynamic reveal animation for a fitness startups logo, focusing on speed and energy. Rendered in 4K for pristine clarity."}'>
+                                <div class="relative overflow-hidden rounded-xl shadow-lg border border-gray-200 group-hover:shadow-xl transition duration-300">
+                                <img src="AL1.png" alt="Animated Logo 1" class="w-full h-auto object-cover transition duration-500 group-hover:scale-[1.05] opacity-95">
+                                <div class="absolute inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="play-circle" class="w-12 h-12 text-green-500"></i></div>
+                            </div>
+                            <div class="mt-4 px-1"><h4 class="text-xl font-semibold text-gray-900 group-hover:accent-text transition">Evolve Fitness Animation</h4><p class="text-sm text-gray-500">Animated Logo</p></div>
+                        </div>
+                        <div class="project-card cursor-pointer group" data-project='{"title": "Tech Solutions Identity Reveal", "type": "Motion Graphics / Logo Design", "video_url": "https://youtu.be/8nHtvJL5htI", "description": "Minimalist digital identity reveal using subtle glowing effects and sound synchronization."}'>
+                                <div class="relative overflow-hidden rounded-xl shadow-lg border border-gray-200 group-hover:shadow-xl transition duration-300">
+                                <img src="AL2.jpg" alt="Animated Logo 2" class="w-full h-auto object-cover transition duration-500 group-hover:scale-[1.05] opacity-95">
+                                <div class="absolute inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="play-circle" class="w-12 h-12 text-green-500"></i></div>
+                            </div>
+                            <div class="mt-4 px-1"><h4 class="text-xl font-semibold text-gray-900 group-hover:accent-text transition">Tech Solutions Reveal</h4><p class="text-sm text-gray-500">Animated Logo</p></div>
+                        </div>
+                        <div class="project-card cursor-pointer group" data-project='{"title": "Corporate Explainer Video", "type": "Video Editing / Motion Graphics", "video_url": "https://youtu.be/5cKA8AiYYkY", "description": "Conceptualized, edited, and animated a 90-second explainer video for a B2B SaaS platform."}'>
+                                <div class="relative overflow-hidden rounded-xl shadow-lg border border-gray-200 group-hover:shadow-xl transition duration-300">
+                                <img src="AL3.png" alt="Animated Logo 3" class="w-full h-auto object-cover transition duration-500 group-hover:scale-[1.05] opacity-95">
+                                <div class="absolute inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="play-circle" class="w-12 h-12 text-green-500"></i></div>
+                            </div>
+                            <div class="mt-4 px-1"><h4 class="text-xl font-semibold text-gray-900 group-hover:accent-text transition">Brand Mark Opener</h4><p class="text-sm text-gray-500">Animated Logo</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="ai-pictures" class="project-category slide-hidden animate-on-scroll">
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="project-card cursor-pointer group" data-project='{"title": "The Quantum Loop (AI Short)", "type": "AI Image / Generative Art", "video_url": "", "description": "Complex photorealistic render of an urban landscape created entirely using Midjourney. Focus on lighting and texture fidelity."}'>
+                            <div class="relative overflow-hidden rounded-xl shadow-lg border border-gray-200 group-hover:shadow-xl transition duration-300">
+                                <img src="AP1.png" alt="AI Picture 1" class="w-full h-auto object-cover transition duration-500 group-hover:scale-[1.05] opacity-95">
+                                <div class="absolute inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="zoom-in" class="w-12 h-12 text-green-500"></i></div>
+                            </div>
+                            <div class="mt-4 px-1"><h4 class="text-xl font-semibold text-gray-900 group-hover:accent-text transition">Urban Future Render</h4><p class="text-sm text-gray-500">AI Picture</p></div>
+                        </div>
+                        <div class="project-card cursor-pointer group" data-project='{"title": "Evolve Fitness Brand Identity", "type": "AI Image / Concept Art", "video_url": "", "description": "A surreal piece of digital art used for a marketing campaign. Demonstrates advanced control over color harmony and composition in generative platforms."}'>
+                            <div class="relative overflow-hidden rounded-xl shadow-lg border border-gray-200 group-hover:shadow-xl transition duration-300">
+                                <img src="https://www.calliaweb.co.uk/wp-content/uploads/2015/10/600x400.jpg" alt="AI Picture 2" class="w-full h-auto object-cover transition duration-500 group-hover:scale-[1.05] opacity-95">
+                                <div class="absolute inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="zoom-in" class="w-12 h-12 text-green-500"></i></div>
+                            </div>
+                            <div class="mt-4 px-1"><h4 class="text-xl font-semibold text-gray-900 group-hover:accent-text transition">Surreal Digital Canvas</h4><p class="text-sm text-gray-500">AI Picture</p></div>
+                        </div>
+                        <div class="project-card cursor-pointer group" data-project='{"title": "Corporate Explainer Video", "type": "AI Image / Product Visualization", "video_url": "", "description": "Used Midjourney to create high-resolution product shots before physical prototyping."}'>
+                            <div class="relative overflow-hidden rounded-xl shadow-lg border border-gray-200 group-hover:shadow-xl transition duration-300">
+                                <img src="https://www.calliaweb.co.uk/wp-content/uploads/2015/10/600x400.jpg" alt="AI Picture 3" class="w-full h-auto object-cover transition duration-500 group-hover:scale-[1.05] opacity-95">
+                                <div class="absolute inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="zoom-in" class="w-12 h-12 text-green-500"></i></div>
+                            </div>
+                            <div class="mt-4 px-1"><h4 class="text-xl font-semibold text-gray-900 group-hover:accent-text transition">Hardware Concept Mockup</h4><p class="text-sm text-gray-500">AI Picture</p></div>
+                        </div>
+                        <div class="project-card cursor-pointer group" data-project='{"title": "Project 4", "type": "AI Image", "video_url": "", "description": "Detailed prompt engineering resulted in this complex environment shot."}'>
+                            <div class="relative overflow-hidden rounded-xl shadow-lg border border-gray-200 group-hover:shadow-xl transition duration-300">
+                                <img src="AP4.png" alt="AI Picture 4" class="w-full h-auto object-cover transition duration-500 group-hover:scale-[1.05] opacity-95">
+                                <div class="absolute inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="zoom-in" class="w-12 h-12 text-green-500"></i></div>
+                            </div>
+                            <div class="mt-4 px-1"><h4 class="text-xl font-semibold text-gray-900 group-hover:accent-text transition">Environmntal Scene</h4><p class="text-sm text-gray-500">AI Picture</p></div>
+                        </div>
+                        <div class="project-card cursor-pointer group" data-project='{"title": "Project 5", "type": "AI Image", "video_url": "", "description": "High-fidelity abstract design work suitable for large format printing."}'>
+                            <div class="relative overflow-hidden rounded-xl shadow-lg border border-gray-200 group-hover:shadow-xl transition duration-300">
+                                <img src="https://www.calliaweb.co.uk/wp-content/uploads/2015/10/600x400.jpg" alt="AI Picture 5" class="w-full h-auto object-cover transition duration-500 group-hover:scale-[1.05] opacity-95">
+                                <div class="absolute inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="zoom-in" class="w-12 h-12 text-green-500"></i></div>
+                            </div>
+                            <div class="mt-4 px-1"><h4 class="text-xl font-semibold text-gray-900 group-hover:accent-text transition">Abstract Art</h4><p class="text-sm text-gray-500">AI Picture</p></div>
+                        </div>
+                        <div class="project-card cursor-pointer group" data-project='{"title": "Project 6", "type": "AI Image", "video_url": "", "description": "Character study focusing on emotion and cinematic lighting."}'>
+                            <div class="relative overflow-hidden rounded-xl shadow-lg border border-gray-200 group-hover:shadow-xl transition duration-300">
+                                <img src="https://www.calliaweb.co.uk/wp-content/uploads/2015/10/600x400.jpg" alt="AI Picture 6" class="w-full h-auto object-cover transition duration-500 group-hover:scale-[1.05] opacity-95">
+                                <div class="absolute inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="zoom-in" class="w-12 h-12 text-green-500"></i></div>
+                            </div>
+                            <div class="mt-4 px-1"><h4 class="text-xl font-semibold text-gray-900 group-hover:accent-text transition">Cinematic Character Study</h4><p class="text-sm text-gray-500">AI Picture</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="ai-animated-videos" class="project-category slide-hidden animate-on-scroll">
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="project-card cursor-pointer group" data-project='{"title": "The AI Motion Reel", "type": "AI Video / Motion Design", "video_url": "https://youtu.be/c-H2Bf2oCso", "description": "Showcase of animated logos and dynamic typography generated using generative video tools and post-edited for perfection."}'>
+                            <div class="relative overflow-hidden rounded-xl shadow-lg border border-gray-200 group-hover:shadow-xl transition duration-300">
+                                <img src="AAV1.png" alt="AI Animated Video 1" class="w-full h-auto object-cover transition duration-500 group-hover:scale-[1.05] opacity-95">
+                                <div class="absolute inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="play-circle" class="w-12 h-12 text-green-500"></i></div>
+                            </div>
+                            <div class="mt-4 px-1"><h4 class="text-xl font-semibold text-gray-900 group-hover:accent-text transition">The AI Motion Reel</h4><p class="text-sm text-gray-500">AI Animated Video</p></div>
+                        </div>
+                        <div class="project-card cursor-pointer group" data-project='{"title": "Morphing Architecture Study", "type": "AI Video / Concept Visualization", "video_url": "https://youtu.be/92VJf-m2kC8", "description": "A continuous shot generated by SORA, demonstrating seamless transitions between impossible architectural designs."}'>
+                            <div class="relative overflow-hidden rounded-xl shadow-lg border border-gray-200 group-hover:shadow-xl transition duration-300">
+                                <img src="AAV2.png" alt="AI Animated Video 2" class="w-full h-auto object-cover transition duration-500 group-hover:scale-[1.05] opacity-95">
+                                <div class="absolute inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="play-circle" class="w-12 h-12 text-green-500"></i></div>
+                            </div>
+                            <div class="mt-4 px-1"><h4 class="text-xl font-semibold text-gray-900 group-hover:accent-text transition">Morphing Architecture</h4><p class="text-sm text-gray-500">AI Animated Video</p></div>
+                        </div>
+                        <div class="project-card cursor-pointer group" data-project='{"title": "Product Launch Sequence", "type": "AI Video / Commercial", "video_url": "https://youtu.be/QDuGDJTZlLA", "description": "Generated a 15-second commercial bumper emphasizing product elegance and dynamic camera movement."}'>
+                            <div class="relative overflow-hidden rounded-xl shadow-lg border border-gray-200 group-hover:shadow-xl transition duration-300">
+                                <img src="AAV3.png" alt="AI Animated Video 3" class="w-full h-auto object-cover transition duration-500 group-hover:scale-[1.05] opacity-95">
+                                <div class="absolute inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="play-circle" class="w-12 h-12 text-green-500"></i></div>
+                            </div>
+                            <div class="mt-4 px-1"><h4 class="text-xl font-semibold text-gray-900 group-hover:accent-text transition">Product Launch Sequence</h4><p class="text-sm text-gray-500">AI Animated Video</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="ai-videos-general" class="project-category slide-hidden animate-on-scroll">
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="project-card cursor-pointer group" data-project='{"title": "Abstract Generative Art Film", "type": "AI Video / Abstract", "video_url": "https://youtu.be/0r0WYEKYjis", "description": "A meditative piece focused on color shifting and fractal generation, using advanced rendering techniques."}'>
+                                <div class="relative overflow-hidden rounded-xl shadow-lg border border-gray-200 group-hover:shadow-xl transition duration-300">
+                                <img src="AV1.png" alt="AI Video 1" class="w-full h-auto object-cover transition duration-500 group-hover:scale-[1.05] opacity-95">
+                                <div class="absolute inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="play-circle" class="w-12 h-12 text-green-500"></i></div>
+                            </div>
+                            <div class="mt-4 px-1"><h4 class="text-xl font-semibold text-gray-900 group-hover:accent-text transition">Abstract Art Film</h4><p class="text-sm text-gray-500">AI Video</p></div>
+                        </div>
+                        <div class="project-card cursor-pointer group" data-project='{"title": "Sci-Fi Short: The Beacon", "type": "AI Video / Narrative", "video_url": "https://youtu.be/Btg7pT_Ve2E", "description": "A short sci-fi narrative testing character continuity and complex environmental interactions generated via Veo 3."}'>
+                                <div class="relative overflow-hidden rounded-xl shadow-lg border border-gray-200 group-hover:shadow-xl transition duration-300">
+                                <img src="AV2.png" alt="AI Video 2" class="w-full h-auto object-cover transition duration-500 group-hover:scale-[1.05] opacity-95">
+                                <div class="absolute inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="play-circle" class="w-12 h-12 text-green-500"></i></div>
+                            </div>
+                            <div class="mt-4 px-1"><h4 class="text-xl font-semibold text-gray-900 group-hover:accent-text transition">Sci-Fi Short Film</h4><p class="text-sm text-gray-500">AI Video</p></div>
+                        </div>
+                        <div class="project-card cursor-pointer group" data-project='{"title": "Corporate Explainer Video (AI)", "type": "AI Video / Explainer", "video_url": "https://youtu.be/eTm3kYb-UfQ?si=ATyHpsvUroZfHIPH", "description": "A proof-of-concept explainer video generated entirely through AI, showcasing efficiency in content creation."}'>
+                                <div class="relative overflow-hidden rounded-xl shadow-lg border border-gray-200 group-hover:shadow-xl transition duration-300">
+                                <img src="AV3.png" alt="AI Video 3" class="w-full h-auto object-cover transition duration-500 group-hover:scale-[1.05] opacity-95">
+                                <div class="absolute inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="play-circle" class="w-12 h-12 text-green-500"></i></div>
+                            </div>
+                            <div class="mt-4 px-1"><h4 class="text-xl font-semibold text-gray-900 group-hover:accent-text transition">AI Explainer Video</h4><p class="text-sm text-gray-500">AI Video</p></div>
+                        </div>
+                        <div class="project-card cursor-pointer group" data-project='{"title": "Surreal Dreamscape", "type": "AI Video / Experimental", "video_url": "https://youtu.be/rRahuUkx_D8", "description": "Highly stylized, abstract video art generated with a focus on psychological mood and vibrant color grading."}'>
+                                <div class="relative overflow-hidden rounded-xl shadow-lg border border-gray-200 group-hover:shadow-xl transition duration-300">
+                                <img src="AV4.png" alt="AI Video 4" class="w-full h-auto object-cover transition duration-500 group-hover:scale-[1.05] opacity-95">
+                                <div class="absolute inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="play-circle" class="w-12 h-12 text-green-500"></i></div>
+                            </div>
+                            <div class="mt-4 px-1"><h4 class="text-xl font-semibold text-gray-900 group-hover:accent-text transition">Surreal Dreamscape</h4><p class="text-sm text-gray-500">AI Video</p></div>
+                        </div>
+                        <div class="project-card cursor-pointer group" data-project='{"title": "Nature Documentary Mockup", "type": "AI Video / Documentary", "video_url": "https://youtu.be/NskiVyxeMY0", "description": "Realistic wildlife footage generated entirely via AI for stock video usage."}'>
+                                <div class="relative overflow-hidden rounded-xl shadow-lg border border-gray-200 group-hover:shadow-xl transition duration-300">
+                                <img src="AV5.png" alt="AI Video 5" class="w-full h-auto object-cover transition duration-500 group-hover:scale-[1.05] opacity-95">
+                                <div class="absolute inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="play-circle" class="w-12 h-12 text-green-500"></i></div>
+                            </div>
+                            <div class="mt-4 px-1"><h4 class="text-xl font-semibold text-gray-900 group-hover:accent-text transition">Wildlife Mockup</h4><p class="text-sm text-gray-500">AI Video</p></div>
+                        </div>
+                        <div class="project-card cursor-pointer group" data-project='{"title": "Cyberpunk City Loop", "type": "AI Video / Environment Loop", "video_url": "https://youtu.be/jR-e5E015zM", "description": "Seamless loop video for background use in digital signage or virtual events."}'>
+                                <div class="relative overflow-hidden rounded-xl shadow-lg border border-gray-200 group-hover:shadow-xl transition duration-300">
+                                <img src="AV6.png" alt="AI Video 6" class="w-full h-auto object-cover transition duration-500 group-hover:scale-[1.05] opacity-95">
+                                <div class="absolute inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="play-circle" class="w-12 h-12 text-green-500"></i></div>
+                            </div>
+                            <div class="mt-4 px-1"><h4 class="text-xl font-semibold text-gray-900 group-hover:accent-text transition">Cyberpunk Loop</h4><p class="text-sm text-gray-500">AI Video</p></div>
+                        </div>
+                        <div class="project-card cursor-pointer group" data-project='{"title": "Deep Sea Exploration", "type": "AI Video / Concept Art", "video_url": "https://youtube.com/shorts/wed0KAT8P_0?feature=share", "description": "Generated footage of fictional deep-sea creatures and environments."}'>
+                                <div class="relative overflow-hidden rounded-xl shadow-lg border border-gray-200 group-hover:shadow-xl transition duration-300">
+                                <img src="AV7.png" alt="AI Video 7" class="w-full h-auto object-cover transition duration-500 group-hover:scale-[1.05] opacity-95">
+                                <div class="absolute inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="play-circle" class="w-12 h-12 text-green-500"></i></div>
+                            </div>
+                            <div class="mt-4 px-1"><h4 class="text-xl font-semibold text-gray-900 group-hover:accent-text transition">Deep Sea Exploration</h4><p class="text-sm text-gray-500">AI Video</p></div>
+                        </div>
+                        <div class="project-card cursor-pointer group" data-project='{"title": "VFX Pre-Visualization", "type": "AI Video / Pre-Vis", "video_url": "https://youtube.com/shorts/zwUV5aMBlg4?feature=share", "description": "Rapid prototyping of complex VFX shots for cinematic production, saving weeks of traditional rendering time."}'>
+                                <div class="relative overflow-hidden rounded-xl shadow-lg border border-gray-200 group-hover:shadow-xl transition duration-300">
+                                <img src="AV8.png" alt="AI Video 8" class="w-full h-auto object-cover transition duration-500 group-hover:scale-[1.05] opacity-95">
+                                <div class="absolute inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="play-circle" class="w-12 h-12 text-green-500"></i></div>
+                            </div>
+                            <div class="mt-4 px-1"><h4 class="text-xl font-semibold text-gray-900 group-hover:accent-text transition">VFX Pre-Visualization</h4><p class="text-sm text-gray-500">AI Video</p></div>
+                        </div>
+                        <div class="project-card cursor-pointer group" data-project='{"title": "Dynamic Title Sequence", "type": "AI Video / Titles", "video_url": "https://youtube.com/shorts/Xe1TRn6nTbM?feature=share", "description": "Abstract and impactful title sequence generated with a focus on smooth, dynamic typography."}'>
+                                <div class="relative overflow-hidden rounded-xl shadow-lg border border-gray-200 group-hover:shadow-xl transition duration-300">
+                                <img src="AV9.png" alt="AI Video 9" class="w-full h-auto object-cover transition duration-500 group-hover:scale-[1.05] opacity-95">
+                                <div class="absolute inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="play-circle" class="w-12 h-12 text-green-500"></i></div>
+                            </div>
+                            <div class="mt-4 px-1"><h4 class="text-xl font-semibold text-gray-900 group-hover:accent-text transition">Dynamic Title Sequence</h4><p class="text-sm text-gray-500">AI Video</p></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+        <section id="contact" class="py-24 px-4 border-t border-gray-200 bg-gray-50">
+            <span class="text-sm font-semibold uppercase tracking-widest accent-text block mb-2">05. Contact</span>
+            <h2 class="text-4xl font-bold mb-16 mt-2 text-gray-900 text-center">Ready to Start a Conversation?</h2>
+
+            <div class="grid md:grid-cols-5 gap-12 max-w-6xl mx-auto">
+                <div class="md:col-span-2 animate-on-scroll space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-900">Direct Contact</h3>
+                        <p class="text-lg text-gray-700 flex items-center mb-4"><i data-lucide="mail" class="w-6 h-6 mr-4 accent-text"></i> workwithwaleed1@gmail.com</p>
+                        <p class="text-lg text-gray-700 flex items-center"><i data-lucide="phone" class="w-6 h-6 mr-4 accent-text"></i> +92 318 0090089</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-900">Professional Platforms</h3>
+                        <div class="flex space-x-4">
+                            
+                            <a href="https://www.upwork.com/freelancers/~015083d5798ff28e7b" target="_blank" class="block group transition duration-300 hover:scale-110 shadow-lg rounded-full" aria-label="Upwork Profile">
+                                <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center overflow-hidden border border-gray-200">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXrJQRkY9aJjb0_WRU0xQNbCw2zCSwdPfAUg&s" alt="Upwork" class="w-16 h-16 object-cover">
+                                </div>
+                            </a>
+                            
+                            <a href="[Your Fiverr URL]" target="_blank" class="block group transition duration-300 hover:scale-110 shadow-lg rounded-full" aria-label="Fiverr Profile">
+                                <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center overflow-hidden border border-gray-200">
+                                   <img src="https://static.vecteezy.com/system/resources/thumbnails/029/463/373/small/fiverr-app-icon-freelancing-market-is-perfect-for-use-in-any-mobile-app-related-project-modern-design-with-the-iconic-fiver-logo-in-a-clean-use-it-on-your-website-free-vector.jpg" alt="Fiverr" class="w-16 h-16 object-cover">
+                                </div>
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/workwithwaleed/" target="_blank" class="block group transition duration-300 hover:scale-110 shadow-lg rounded-full" aria-label="LinkedIn Profile">
+                                <div class="w-14 h-14 rounded-full overflow-hidden border border-gray-200 bg-white flex items-center justify-center">
+                                    <img src="https://www.vectorlogo.zone/logos/linkedin/linkedin-icon.svg" alt="LinkedIn" class="w-9 h-9 object-contain">
+                                </div>
+                            </a>
+
+                            <a href="[Your Instagram URL]" target="_blank" class="block group transition duration-300 hover:scale-110 shadow-lg rounded-full" aria-label="Instagram Profile">
+                                <div class="w-14 h-14 rounded-full overflow-hidden border border-gray-200 bg-white flex items-center justify-center">
+                                    <img src="https://www.vectorlogo.zone/logos/instagram/instagram-icon.svg" alt="Instagram" class="w-9 h-9 object-contain">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:col-span-3 animate-on-scroll p-8 rounded-xl shadow-2xl bg-white border border-gray-200">
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-900">Project Inquiry</h3>
+                    <form id="contact-form" action="https://formspree.io/f/xyzrlday" method="POST" class="space-y-4">
+                        <input type="text" name="name" placeholder="Your Name" required class="mt-1 block w-full bg-gray-50 border border-gray-300 rounded-lg p-4 text-gray-900 focus:ring-green-700 focus:border-green-700">
+                        <input type="email" name="email" placeholder="Your Email" required class="mt-1 block w-full bg-gray-50 border border-gray-300 rounded-lg p-4 text-gray-900 focus:ring-green-700 focus:border-green-700">
+                        <textarea name="message" rows="5" placeholder="Project details and scope..." required class="mt-1 block w-full bg-gray-50 border border-gray-300 rounded-lg p-4 text-gray-900 focus:ring-green-700 focus:border-green-700"></textarea>
+                        
+                        <button type="submit" id="submit-button" class="w-full btn-primary px-8 py-3 text-lg font-bold rounded-xl shadow-lg mt-4 flex items-center justify-center">
+                            <i data-lucide="message-square-text" class="w-5 h-5 mr-2"></i> Submit Inquiry
+                        </button>
+                        
+                        <div id="form-message" class="mt-3 text-center text-sm font-medium"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="project-modal" class="fixed inset-0 bg-gray-900 bg-opacity-90 z-[99] hidden items-center justify-center p-4" onclick="closeModal(event)">
+        <div class="bg-white rounded-xl shadow-2xl max-w-4xl w-full p-8 space-y-6 transform transition-all duration-300 border-t-4 accent-border" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-start border-b pb-4 border-gray-200">
+                <div>
+                    <h3 id="modal-title" class="text-3xl font-bold accent-text text-gray-900">Project Title</h3>
+                    <p id="modal-type" class="text-sm text-gray-500"></p>
+                </div>
+                <button onclick="closeModal()" class="p-2 rounded-full bg-gray-100 text-gray-500 hover:text-gray-900 transition">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <div id="modal-video-container" class="rounded-lg overflow-hidden border border-gray-300">
+            </div>
+            <div class="space-y-4 mt-6">
+                <h4 class="text-xl font-semibold text-gray-900">Project Overview & My Contribution</h4>
+                <p id="modal-description" class="text-gray-700 leading-relaxed"></p>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="mt-20 py-8 text-center border-t border-gray-200 bg-gray-50">
+        <p class="text-sm text-gray-500">
+            &copy; <span id="year"></span> Waleed Ahmed. All Rights Reserved. | High-Impact Visuals.
+        </p>
+    </footer>
+
+    <script>
+        // Set the current year in the footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // 1. Icon Initialization
+        lucide.createIcons();
+
+        // 2. Mobile Menu Toggle
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 3. Project Modal Logic
+        const modal = document.getElementById('project-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalType = document.getElementById('modal-type');
+        const modalVideoContainer = document.getElementById('modal-video-container');
+        const modalDescription = document.getElementById('modal-description');
+
+        // FIX: Function to normalize YouTube URLs and add required parameters for autoplay and mute
+        function getEmbedUrl(url) {
+            if (!url) return '';
+            
+            // Regex to extract the video ID from any YouTube URL format (standard, short, or existing embed)
+            const regex = /(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+            const match = url.match(regex);
+            
+            if (match && match[1]) {
+                const videoId = match[1];
+                // APPEND: autoplay=1 AND mute=1 to force playback on modern browsers
+                return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&modestbranding=1&rel=0`;
+            }
+            return url;
+        }
+
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const projectData = JSON.parse(card.getAttribute('data-project'));
+
+                modalTitle.textContent = projectData.title;
+                modalType.textContent = projectData.type;
+                modalDescription.textContent = projectData.description;
+
+                // Clear previous content
+                modalVideoContainer.innerHTML = '';
+
+                // LOGIC TO CHOOSE BETWEEN VIDEO OR IMAGE
+                if (projectData.video_url) {
+                    // It's a video project
+                    modalVideoContainer.classList.add('video-container'); // Add aspect ratio class
+                    
+                    const embedUrl = getEmbedUrl(projectData.video_url);
+                    const iframe = document.createElement('iframe');
+                    iframe.setAttribute('src', embedUrl); 
+                    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                    iframe.setAttribute('allowfullscreen', 'true');
+                    iframe.classList.add('w-full', 'h-full', 'absolute', 'top-0', 'left-0');
+                    modalVideoContainer.appendChild(iframe);
+                } else {
+                    // It's an image project (No video URL)
+                    modalVideoContainer.classList.remove('video-container'); // Remove fixed aspect ratio
+                    
+                    // Find the image source from the clicked card
+                    const imgElement = card.querySelector('img');
+                    if (imgElement) {
+                        const img = document.createElement('img');
+                        img.src = imgElement.src;
+                        img.classList.add('w-full', 'h-auto', 'max-h-[60vh]', 'object-contain', 'mx-auto');
+                        modalVideoContainer.appendChild(img);
+                    }
+                }
+
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            });
+        });
+
+        function closeModal(event) {
+            if (!event || event.target.id === 'project-modal' || event.currentTarget.tagName === 'BUTTON') {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                // Stop any video playback by removing the iframe/image
+                modalVideoContainer.innerHTML = '';
+            }
+        }
+
+        // 4. Scroll Animation (Intersection Observer for smooth entrances)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-viewport');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            rootMargin: '0px',
+            threshold: 0.15
+        });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(element => {
+            observer.observe(element);
+        });
+
+        // 5. REAL Contact Form Submission via Formspree
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+        const submitBtn = document.getElementById('submit-button');
+
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault(); // Prevent page reload
+            
+            // UI State: Disable button and show loading
+            submitBtn.disabled = true;
+            const originalBtnContent = submitBtn.innerHTML;
+            submitBtn.innerHTML = "Sending...";
+
+            const formData = new FormData(this);
+
+            try {
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    formMessage.textContent = 'Inquiry sent successfully! I will review it immediately.';
+                    formMessage.classList.remove('text-red-600');
+                    // Changed to Green for this theme
+                    formMessage.classList.add('text-green-700');
+                    contactForm.reset(); // Clear form inputs
+                } else {
+                    const data = await response.json();
+                    if (data.errors) {
+                        formMessage.textContent = data.errors.map(error => error.message).join(", ");
+                    } else {
+                        formMessage.textContent = "Oops! There was a problem submitting your form.";
+                    }
+                    formMessage.classList.add('text-red-600');
+                }
+            } catch (error) {
+                formMessage.textContent = "Oops! Network error. Please try again later.";
+                formMessage.classList.add('text-red-600');
+            } finally {
+                // UI State: Reset button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnContent;
+                lucide.createIcons(); // Refresh icons after innerHTML change
+            }
+        });
+
+
+        // 6. Project Tab Logic
+        function showCategory(categoryID) {
+            // Hide all categories
+            document.querySelectorAll('.project-category').forEach(cat => {
+                cat.classList.add('slide-hidden');
+                cat.classList.remove('block');
+            });
+
+            // Deactivate all tabs
+            document.querySelectorAll('.project-tab').forEach(tab => {
+                // Changed to Green theme classes
+                tab.classList.remove('tab-active', 'text-white', 'bg-green-700');
+                tab.classList.add('text-gray-700', 'hover:text-green-700');
+            });
+
+            // Show the selected category
+            const activeCategory = document.getElementById(categoryID);
+            activeCategory.classList.remove('slide-hidden');
+            activeCategory.classList.add('block');
+
+            // Activate the clicked tab (Green Theme)
+            document.querySelector(`[onclick="showCategory('${categoryID}')"]`).classList.add('tab-active', 'text-white', 'bg-green-700');
+            document.querySelector(`[onclick="showCategory('${categoryID}')"]`).classList.remove('text-gray-700', 'hover:text-green-700');
+
+            // Re-run scroll observer for new elements
+            document.querySelectorAll('.animate-on-scroll').forEach(element => {
+                observer.observe(element);
+            });
+        }
+        
+        // Initialize by showing the first category on load
+        document.addEventListener('DOMContentLoaded', () => {
+             showCategory('animated-logos');
+        });
+    </script>
+</body>
+</html>
