@@ -2,21 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>PressPlayNails | Shop Press On Nails</title>
+  <title>Pink Blossom | PressPlay Nails</title>
 
-  <!-- Google Fonts -->
+  <!-- GOOGLE FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    /* ===== GLOBAL ===== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
       background: #E6D8C5;
       color: #222;
     }
-    a { text-decoration: none; color: inherit; }
 
-  .promo-bar {
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    nav a[onclick] {
+      cursor: pointer;
+    }
+    .promo-bar {
   background: #ff7e8d;
   color: #ffffff;
   overflow: hidden;
@@ -42,139 +54,161 @@
   top: 0;
   z-index: 1000;
 }
-
-
-
+    /* ===== HEADER ===== */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 18px 40px;
-      background: #E6D8C5;
-      border-bottom: 1px solid #E6D8C5;
+      border-bottom: 1px solid #eee;
       position: sticky;
       top: 0;
+      background: #E6D8C5;
       z-index: 100;
     }
-    header {
+ header {
   position: sticky;
   top: 40px; /* height of promo bar */
   z-index: 999;
 }
-
     header h1 {
       font-size: 24px;
       font-weight: 700;
       letter-spacing: 1px;
     }
+
     nav a {
       margin-left: 20px;
       font-weight: 500;
       font-size: 15px;
-      cursor: pointer;
     }
 
-    .hero {
-      background: url('banner9.jpeg') center/cover no-repeat;
-      height: 70vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 20px;
-      animation: zoom 5s ease-in-out infinite alternate;
-    }
-    @keyframes zoom {
-      from { transform: scale(1); }
-      to { transform: scale(1.05); }
-    }
-    .hero h2 {
-      font-size: 48px;
-      color: #ffffff;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-      font-weight: 700;
-    }
-    .hero p {
-      margin-top: 12px;
-      font-size: 18px;
-      color: #ffffff;
-      font-weight: 400;
-    }
-    .hero p {
-  color: #2b1719; /* soft pink */
-}
-
-
-    .section-title {
-      text-align: center;
-      font-size: 28px;
-      margin: 40px 0 20px;
-      font-weight: 600;
-    }
-
-    .products {
+    /* ===== PRODUCT PAGE LAYOUT ===== */
+    .product-page {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      padding: 0 40px 40px;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      padding: 60px 40px;
+      max-width: 1200px;
+      margin: auto;
     }
-    .product-card {
-      border-radius: 14px;
-      overflow: hidden;
-      background: #E6D8C5;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-      position: relative;
-      transition: transform 0.3s ease;
-    }
-    .product-card:hover {
-      transform: translateY(-5px);
-    }
-    .product-card img {
+
+    /* ===== PRODUCT IMAGE ===== */
+    .product-image img {
       width: 100%;
-      height: 280px;
-      object-fit: cover;
+      border-radius: 18px;
+      transition: transform 0.4s ease;
     }
-    .product-card .discount-badge {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: #ff7e8d;
-      color: #E6D8C5;
-      padding: 6px 10px;
+
+    .product-image img:hover {
+      transform: scale(1.05);
+    }
+
+    /* ===== PRODUCT DETAILS ===== */
+    .product-details h2 {
+      font-size: 34px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .rating {
+      color: #ff7e8d;
       font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 22px;
       font-weight: 600;
-      border-radius: 6px;
+      margin-bottom: 20px;
     }
-    .product-info {
-      padding: 14px;
-      text-align: center;
-    }
-    .product-info h4 {
+
+    .price span {
       font-size: 16px;
+      color: #999;
+      text-decoration: line-through;
+      margin-left: 10px;
+    }
+
+    .description {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      color: #444;
+    }
+
+    /* ===== OPTIONS ===== */
+    .options {
+      margin-bottom: 25px;
+    }
+
+    .options label {
+      display: block;
+      font-weight: 500;
       margin-bottom: 8px;
     }
-    .product-info .price {
-      font-size: 14px;
-      font-weight: 600;
-      color: #333;
+
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      font-family: 'Poppins', sans-serif;
     }
 
+    /* ===== BUTTON ===== */
+    .btn {
+      background: #ff7e8d;
+      color: #E6D8C5;
+      border: none;
+      padding: 14px 30px;
+      border-radius: 30px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      width: 100%;
+    }
+
+    .btn:hover {
+      background: #ff7e8d;
+    }
+
+    /* ===== BENEFITS ===== */
+    .benefits {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .benefits p {
+      margin-bottom: 8px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .product-page {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ===== FOOTER ===== */
     footer {
       background: #ff7e8d;
-      color: #ffffff;
+      color: #E6D8C5;
       text-align: center;
-      padding: 24px;
+      padding: 25px;
       font-size: 14px;
+      margin-top: 60px;
     }
-
-    /* ================= ADDITION: CART DROPDOWN STYLES ================= */
+     /* ================= ADDITION: CART DROPDOWN STYLES ================= */
     .cart-dropdown {
   position: fixed;
   top: 0;
   right: 0;
   width: 360px;
   height: 100vh;
-  background: #ffffff;
+  background: #E6D8C5;
   border-left: 1px solid #eee;
   box-shadow: -8px 0 20px rgba(0,0,0,0.15);
   display: none;
@@ -191,27 +225,6 @@
   display: block;
   transform: translateX(0);
 }
-.cart-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  z-index: 998;
-  display: none;
-}
-.cart-overlay.show {
-  display: block;
-}
-.cart-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  z-index: 998;
-  display: none;
-}
-.cart-overlay.show {
-  display: block;
-}
-
 
     .cart-dropdown h4 {
       font-size: 16px;
@@ -234,12 +247,12 @@
       padding: 10px;
       background: #ff7e8d;
       border: none;
-      color: #ffffff;
+      color: #E6D8C5;
       border-radius: 6px;
       font-weight: 600;
       cursor: pointer;
     }
-    .cart-icon {
+ .cart-icon {
   position: relative;
   cursor: pointer;
   font-size: 20px;
@@ -257,41 +270,19 @@
   border-radius: 50%;
   line-height: 1;
 }
-/* ===== PRODUCT ADD TO CART BUTTON ===== */
-.product-info button {
-  margin-top: 10px;
-  padding: 10px 16px;
-  background: #ff7e8d;
-  color: #E6D8C5;
-  border: none;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  width: 100%;
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 998;
+  display: none;
 }
 
-/* Hover effect */
-.product-info button:hover {
-  background: #ff6b7d;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(255, 126, 141, 0.35);
+.cart-overlay.show {
+  display: block;
 }
 
-/* Click effect */
-.product-info button:active {
-  transform: translateY(0);
-  box-shadow: none;
-}
-/* ===== FORCE PRODUCT IMAGES TO 1:1 (SQUARE) ===== */
-.product-card img {
-  aspect-ratio: 1 / 1;
-  height: auto;
-}
-
-/* ===== PRODUCT QUICK VIEW MODAL ===== */
+  /* ===== PRODUCT QUICK VIEW MODAL ===== */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -307,7 +298,7 @@
 }
 
 .product-modal {
-  background: #ffffff;
+  background: #E6D8C5;
   width: 90%;
   max-width: 900px;
   border-radius: 14px;
@@ -368,6 +359,7 @@
     padding: 14px 20px;
     flex-wrap: wrap;
   }
+
 
   header h1 {
     font-size: 20px;
@@ -566,26 +558,9 @@ html {
     transform: translateX(-50%);
   }
 }
-.login-btn {
-  margin-left: 14px;
-  padding: 9px 18px;
-  background: #ff7e8d;
-  color: #fff;
-  border: none;
-  border-radius: 22px;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.login-btn:hover {
-  opacity: 0.9;
-}
-
   </style>
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <!-- ===== PRODUCT MODAL ===== -->
 <div class="modal-overlay" id="productModal">
   <div class="product-modal">
@@ -600,17 +575,17 @@ html {
       <h3 id="modalTitle"></h3>
       <p id="modalPrice"></p>
       <button class="checkout-btn" id="modalAddBtn">Add to Cart</button>
-
     </div>
   </div>
 </div>
+
 <script type="module">
 import { fetchProducts } from "./js/products.js";
 
-const container = document.getElementById("featuredProducts");
+const container = document.getElementById("allProducts");
 const products = await fetchProducts();
 
-products.slice(0, 3).forEach(p => {
+products.forEach(p => {
   container.innerHTML += `
     <div class="product-card">
       <img src="${p.images[0]}">
@@ -620,78 +595,42 @@ products.slice(0, 3).forEach(p => {
   `;
 });
 </script>
-<script type="module">
-import { auth } from "./js/firebase.js";
-import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
-
-document.addEventListener("DOMContentLoaded", () => {
-  const loginBtn = document.getElementById("loginBtn");
-
-  // Default behavior if Firebase hasn't loaded yet
-  loginBtn.onclick = () => {
-    window.location.href = "login.html"; // Always works
-  };
-
-  // Listen to Firebase Auth state
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      // User logged in → show Logout
-      loginBtn.textContent = "Logout";
-      loginBtn.onclick = async () => {
-        await signOut(auth);
-        window.location.href = "index.html"; // reload after logout
-      };
-    } else {
-      // User not logged in → show Login
-      loginBtn.textContent = "Login";
-      loginBtn.onclick = () => {
-        window.location.href = "login.html"; // go to login page
-      };
-    }
-  });
-});
-</script>
-
-
-
 
 <body>
-<section class="products" id="featuredProducts"></section>
+<section class="products" id="allProducts"></section>
 
-<div class="promo-bar">
+  <!-- PROMO BAR -->
+  <div class="promo-bar">
   <div class="promo-track">
     <span>FREE Shipping on 3+ Sets • 30% OFF Sitewide (Limited Time) ✨</span>
     <span>FREE Shipping on 3+ Sets • 30% OFF Sitewide (Limited Time) ✨</span>
   </div>
 </div>
 
-
-<header>
-  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <!-- HEADER -->
+  <header>
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
 <!-- MOBILE MENU BUTTON -->
 <div class="menu-toggle" onclick="toggleMobileMenu()">
   <span></span>
   <span></span>
 </div>
 
-  <h1>PressPlayNails</h1>
-  <nav class="main-nav" id="mobileMenu">
+    <h1>PressPlayNails</h1>
+    <nav class="main-nav" id="mobileMenu">
 
-    <a href="#">Home</a>
-    <a href="best-sellers.html">Best Sellers</a>
-    <a href="products.html">Products</a>
-    <a href="#footer">Contact</a>
-    <a href="checkout.html">Check Out</a>
-  </nav>
+      <a href="index.html">Home</a>
+      <a href="best-sellers.html">Best Sellers</a>
+      <a href="products.html">Products</a>
+      <a href="checkout.html">Check Out</a>
+      <a href="#footer">Contact</a>
+      </nav>
     <!-- CART BUTTON (UNCHANGED) -->
     <a onclick="toggleCart()" class="cart-icon" aria-label="Cart">
   🛒
   <span id="cart-count">0</span>
 </a>
-  <button id="loginBtn" class="login-btn">Login</button>
-
 </header>
-
 <!-- ================= ADDITION: CART DROPDOWN HTML ================= -->
 <div class="cart-dropdown" id="cartDropdown">
   <h4>Your Cart</h4>
@@ -702,43 +641,14 @@ document.addEventListener("DOMContentLoaded", () => {
 </a>
   
 </div>
+  <!-- PRODUCT PAGE -->
+  <section class="product-page">
 
-<section class="hero">
-  <div>
-    <h2>Elevate Your Look<br>Salon-Quality Press-Ons</h2>
-    <p>Handcrafted, stylish, made to last 💅🏼</p>
-  </div>
-</section>
-
-<h2 class="section-title">Newest Arrivals</h2>
-
-<div class="products">
-  <div class="product-card">
-    <div class="discount-badge">30% OFF</div>
-    <img src="petalblush1.jpg"
-onclick="openProductModal(
-  'Petal Blush Blossom',
-  24.99,
-  [
-    'petalblush1.jpg',
-    'petalblush2.jpg',
-    'petalblush3.jpg',
-    'guide.jpg'
-  ]
-)">
-
-    <div class="product-info">
-      <h4>Petal Blush Blossom</h4>
-      <p class="price">$24.99</p>
-      <button onclick="addToCart('Petal Blush Blossom',24.99)">Add to Cart</button>
-    </div>
-  </div>
-
-  <div class="product-card">
-    <div class="discount-badge">30% OFF</div>
-    <img src="rose1.jpg"
+    <!-- IMAGE -->
+    <div class="product-image">
+      <img src="rose1.jpg"
   onclick="openProductModal(
-  'Rose Agate Marble',
+  'Pink Blossom',
   24.99,
   [
     'rose1.jpg',
@@ -747,41 +657,66 @@ onclick="openProductModal(
     'size.jpg'
   ]
 )">
-
-    <div class="product-info">
-      <h4>Rose Agate Marble</h4>
-      <p class="price">$24.99</p>
-      <button onclick="addToCart('Rose Agate Marble',24.99)">Add to Cart</button>
     </div>
-  </div>
 
-  <div class="product-card">
-    <div class="discount-badge">20% OFF</div>
-    <img src="marble1.jpg"
-onclick="openProductModal(
-  'Velvet Garnet Glow',
-  24.99,
-  [
-    'marble1.jpg',
-    'marble2.jpg',
-    'marble3.jpg',
-    'size.jpg'
-  ]
-)">
+    <!-- DETAILS -->
+    <div class="product-details">
+      <h2>Pink Blossom</h2>
 
-    <div class="product-info">
-      <h4>Velvet Garnet Glow</h4>
-      <p class="price">$19.99</p>
-      <button onclick="addToCart('Velvet Garnet Glow',19.99)">Add to Cart</button>
+      <!-- STAR RATING -->
+      <div class="rating">★★★★★ (4.9/5)</div>
+
+      <!-- PRICE -->
+      <div class="price">
+        $24.99 <span>$35.99</span>
+      </div>
+
+      <!-- DESCRIPTION -->
+      <p class="description">
+        Handcrafted luxury press-on nails designed for a flawless salon finish.
+        Reusable, durable, and ultra-comfortable — perfect for everyday glam
+        or special occasions.
+      </p>
+
+      <!-- OPTIONS -->
+      <div class="options">
+        <label>Choose Nail Length</label>
+        <select>
+          <option>Short</option>
+          <option>Medium</option>
+          <option>Long</option>
+        </select>
+      </div>
+
+      <div class="options">
+        <label>Choose Nail Shape</label>
+        <select>
+          <option>Almond</option>
+          <option>Coffin</option>
+          <option>Square</option>
+        </select>
+      </div>
+
+      <!-- ADD TO CART -->
+     <button class="btn" onclick="addToCart('PINK BLOSSOM', 24.99)">
+  Add to Cart
+</button>
+      <!-- BENEFITS -->
+      <div class="benefits">
+        <p>✔ Reusable up to 5+ wears</p>
+        <p>✔ Salon-quality gel finish</p>
+        <p>✔ Easy application in minutes</p>
+        <p>✔ Free returns within 14 days</p>
+      </div>
+
     </div>
-  </div>
-</div>
+  </section>
 
-<footer id="footer">
-  © 2025 PressPlayNails • Handmade Press-On Nails
-</footer>
-
-<script> 
+  <!-- FOOTER -->
+  <footer>
+    © 2025 PressPlayNails • Luxury Press-On Nails
+  </footer>
+  <script> 
 
 /* ===== REAL CART SYSTEM (GLOBAL) ===== */
 
@@ -799,8 +734,8 @@ function addToCart(name, price) {
   localStorage.setItem("cart", JSON.stringify(cart));
   alert(name + " added to cart 💖");
   updateCartCount();
-    renderCart();
- const dropdown = document.getElementById("cartDropdown");
+  renderCart();
+  const dropdown = document.getElementById("cartDropdown");
 const overlay = document.getElementById("cartOverlay");
 
 // Open cart differently for mobile vs desktop
@@ -814,7 +749,6 @@ if (window.innerWidth > 768) {
     overlay.classList.add("show");
   }
 }
-
 
 }
 
@@ -955,7 +889,6 @@ document.addEventListener("click", function (e) {
     menu.classList.remove("show");
   }
 });
-
 </script>
 
 </body>
